@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  */
+        .txt-cut {
+            display: -webkit-box;
+            /*对象作为弹性伸缩盒子模型显示*/
+            -webkit-box-orient: vertical;
+            /*设置或检索伸缩盒对象的子元素的排列方式 */
+            -webkit-line-clamp: 2;
+            /*显示多少行文字*/
+            text-overflow: ellipsis;
+            /**/
+            overflow: hidden;
+        }
+
+        .self {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            /* visibility: hidden;
+            display: none;
+            opacity: 0; */
+            /* overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 多行的 -->
+
+
+    <div class="txt-cut">
+        这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字
+    </div>
+    <br>
+    <!-- 单行的 -->
+    <div class="self">
+        这是一行多行这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的文字这是一行多行文本溢出的
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

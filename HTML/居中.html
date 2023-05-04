@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>居中</title>
+    <style>
+        .f {
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+
+        .c {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+
+        .father1 {
+            position: relative;
+        }
+
+        .child1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .father2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .child2 {}
+
+        .father3 {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .child3 {
+            margin: 0 auto;
+        }
+
+        .father4 {
+            position: relative;
+            /* width: 50px; */
+            /* height: 50px; */
+        }
+
+        .child4 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 竖直居中 -->
+
+
+    <!-- 1.通过transform translate -->
+    <div class="f father1">
+        <div class="c child1"></div>
+    </div>
+
+    <hr>
+    <!-- 2.flex布局 -->
+    <div class="f father2">
+        <div class="c child2"></div>
+    </div>
+
+    <hr>
+    <!-- 3.table布局 -->
+    <!-- 父display:table-cell vertical-align:middle -->
+    <div class="f father3">
+        <div class="c child3"></div>
+    </div>
+
+    <hr>
+
+    <!-- 4.absolute  wrtb:0 margin:auto-->
+    <div class="f father4">
+        <div class="c child4"></div>
+    </div>
+
+
+</body>
+
+</html>

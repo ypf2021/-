@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script src="./111.js"></script>
+    <script>
+        function Person(name) {
+            this.name = name
+        }
+
+        Person.prototype.sayName = function () {
+            console.log("我的名字是" + this.name);
+        }
+
+        let p1 = Mynew(Person, "wjk")
+        console.log(p1);
+        p1.sayName()
+
+    </script>
+</body>
+
+</html>

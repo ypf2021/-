@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        .w {
+            width: 200px;
+            background-color: antiquewhite;
+            border: 2px solid antiquewhite;
+        }
+
+        .float1 {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            float: left;
+        }
+
+        .box1 {
+            float: left;
+        }
+
+        .box2 {
+            position: absolute;
+        }
+
+        .box3 {
+            overflow: hidden;
+        }
+
+        .box6::after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="w box1">
+        <!-- 方法1 给父元素也浮动 （让父元素生成bfc） -->
+        <div class="float1"></div>
+    </div>
+
+    <br>
+    <hr>
+
+    <div style="width:20px;height: 200px;"></div>
+
+    <div class="w box2">
+        <!-- 方法2 给父元素position:absolute （让父元素生成bfc） -->
+        <div class="float1"></div>
+    </div>
+
+    <div style="width:20px;height: 200px;"></div>
+
+    <div class="w box3">
+        <!-- 方法3 给父元素 overflow:hidden （让父元素生成bfc） -->
+        <div class="float1"></div>
+    </div>
+
+    <!-- 方法4 直接给父元素高度 -->
+    <div style="width:20px;height: 200px;"></div>
+
+    <div class="w ">
+        <!-- 方法5 在末尾添加空元素并clear：both；代表了它左右都不能有浮动元素，这迫使了他往下移动，进而撑开了父级盒子的高度。 -->
+        <div class="float1"></div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div style="width:20px;height: 200px;"></div>
+
+    <!-- 方法6 给父元素添加 clear：both 的伪元素 -->
+
+    <div class="w box6">
+        <!-- 方法5 在末尾添加空元素并clear：both；display:block代表了它左右都不能有浮动元素，这迫使了他往下移动，进而撑开了父级盒子的高度。 -->
+        <div class="float1"></div>
+    </div>
+
+</body>
+
+</html>

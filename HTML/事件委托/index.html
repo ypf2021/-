@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <ul>
+        <li class="li1">11231231</li>
+        <li class="li2">1231231</li>
+        <li class="li3">21312333</li>
+        <li class="li4">33311</li>
+        <li class="li5">3213</li>
+
+    </ul>
+    <script>
+        var ulList = document.querySelector('ul')
+        console.log(ulList)
+        var liList = document.querySelectorAll('li')
+        console.log(liList)
+        ulList.addEventListener('click', function (e) {
+            console.log(e.target)
+            e.target.innerHTML = '你点击了'
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

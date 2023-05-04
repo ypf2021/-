@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>debounce</title>
+    <style>
+        #wrapper {
+            width: 100%;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            color: #fff;
+            background-color: #444;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    防抖的原理就是：你尽管触发事件，但是我一定在事件触发完n秒无操作后才执行
+    <div id="wrapper"></div>
+
+    <script>
+        count = 1
+        var oDiv = document.querySelector('#wrapper')
+        console.log(oDiv);
+
+        function getUserAction(e) {
+
+            oDiv.innerHTML = count++;
+        }
+
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function () {
+                let args = arguments
+                let context = this
+
+                if (timeout) clearTimeout(timeout); //第一次执行时 timeout是 undefined，clearTimeout并不是把timeout变为 0。//如果一直动的话，就清除计时，重新计时
+                if (immediate) {
+                    // 如果已经执行过，不再执行
+                    var callNow = !timeout; //如果timeout存在 callNow就为false 不立即执行，影响下面的if判断
+                    timeout = setTimeout(function () {  //如果一段时间不触发事件，timeout又变为null 就立即执行
+                        timeout = null;
+                    }, wait)
+                    if (callNow) func.apply(context, args)
+                }
+                else {
+                    timeout = setTimeout(function () {
+                        func.apply(context, args)
+                    }, wait);
+                }
+            }
+        }
+
+        // oDiv.onmousemove = getUserAction
+
+        oDiv.onmousemove = debounce(getUserAction, 100, true)
+    </script>
+</body>
+
+</html>

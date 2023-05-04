@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        async function getName() {
+            // return 'hello'  //return 一个普通的数据，状态会变为fulfiled
+
+            //返回一个promise对象时，会根据这个promis对象的结果决定返回的结果，
+            // return new Promise((resolve, reject) => {
+            //     // resolve()    
+            //     // reject()
+            //     // throw 'aaa'
+            // })
+
+            // throw 'error'   //抛出一个错误，会让状态变成 rejected
+
+            // await命令后面是一个 Promise 对象，返回该对象的结果。如果不是 Promise 对象，就直接返回对应的值。
+            //await 后面的 promise 如果reject或者throw 的话 相当于await这个语句报错了，可以用tyr catch包住await语句。
+            // await new Promise((resolve, reject) => {
+            //     reject('我错了')
+            // })
+
+
+
+            // console.log(11)
+            try {
+                await new Promise((resolve, reject) => {
+                    // setTimeout(function () {
+                    //     console.log('timeOut')
+                    //     // resolve()
+                    // })
+                    // console.log(21)
+                    // reject(111)
+                    throw Error("出错了")
+
+                }).then(success => {
+                    console.log(2222)
+                })
+            } catch (e) {
+                console.log(e)
+            }
+        }
+
+        // getName()
+        // console.log(111)
+
+        console.log(getName())
+    </script>
+</body>
+
+</html>
