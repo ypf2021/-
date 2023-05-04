@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 利用float 和 bfc快  */
+        /* bfc块 不会和 浮动元素重叠 */
+        .outer {
+            height: 400px;
+            background-color: antiquewhite;
+        }
+
+        .left {
+            /* 左侧确定宽度 */
+            float: left;
+            background-color: aqua;
+            height: 100%;
+            width: 200px;
+        }
+
+        .right {
+            overflow: hidden;
+            width: auto;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="outer">
+        <div class="left">左侧</div>
+        <div class="right">右侧</div>
+    </div>
+
+
+</body>
+
+</html>

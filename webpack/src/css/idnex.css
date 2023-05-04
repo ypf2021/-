@@ -1,0 +1,6 @@
+.box1{
+    width: 400px;
+    height: 500px;
+    background-image: url(../image/psc.webp);   /*图片资源已经内置到webpack5中了*/
+    background-size: cover;
+}

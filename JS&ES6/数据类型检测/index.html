@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="./instanceof.js"></script>
+    <script>
+        //typeof
+        console.log(typeof undefined)   //undefindd
+        console.log(typeof null)    //object
+        console.log(typeof String)  //function
+        console.log(typeof Object)  //function
+        console.log(typeof Number)  //function
+        console.log(typeof Boolean) //function
+        console.log("function", typeof function () { }) //function
+        console.log(typeof []);     //object
+        console.log(typeof {});     //object
+        console.log(typeof function () { }) //function
+
+        //instanceof
+        //instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
+        const arr = [];
+        const obj = {}
+
+
+        // instanceof判断一个实例是否属于某种类型
+        //instanceof 主要的实现原理就是只要右边变量的 prototype 在左边变量的原型链上即可
+        console.log(arr instanceof Array)   //true
+        console.log(obj instanceof Object)   //true
+        console.log('asdon' instanceof String)  //false
+        console.log(new String('assad') instanceof String)  //true
+        console.log({ 'a': name } instanceof Object);   //true
+        console.log(true instanceof Boolean)    //false
+        // console.log(undefined instanceof undefined)
+
+        // 使用 Object.prototype.toString.call()
+        Object.prototype.toString.call({ "111": '111' })   //[object Object]
+        Object.prototype.toString.call('asdasd')   //[object String]
+        Object.prototype.toString.call(true)   //[object Boolean]
+        Object.prototype.toString.call(undefined)   //[object Undefined]
+        Object.prototype.toString.call(function () { })   //[object Function]
+        Object.prototype.toString.call(123)   //[object Number]
+
+
+
+
+
+        // console.log(undefined == null);     //true
+    </script>
+
+</body>
+
+</html>
