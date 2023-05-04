@@ -12,10 +12,4 @@ const _getExFilename = (filename) => {
     console.log(filename.slice(lastIndex))
 }
 
-
-
-
-
-
-
 console.log(_getExFilename('problem.xml'))
