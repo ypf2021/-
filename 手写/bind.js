@@ -6,3 +6,5 @@ Function.prototype._bind = function (TargetThis, ...args) {
     };
     return bindFn;
 };
+
+
